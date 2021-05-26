@@ -9,7 +9,10 @@
 download_recovery()
 {
     wget -O twrp.img https://jaist.dl.sourceforge.net/project/mbroms/TWRPLMI/MBTWRP_21-05-2021_LMI.img
+}
 
+flash_recovery()
+{
     adb kill-server
     adb reboot bootloader
     fastboot flash reovery twrp.img
@@ -29,6 +32,7 @@ download_lineage()
 main()
 {
     download_recovery
+    flash_recovery
     #download_eurom
     #download_lineage
 }
